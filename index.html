@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Angelo ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =================================
+   RESET
+================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#f5eee5;
+
+    color:#4b4038;
+
+    font-family:"DM Sans",sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =================================
+   BACKGROUND
+================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+        radial-gradient(
+            rgba(174,130,91,.18) 1.5px,
+            transparent 1.5px
+        );
+
+    background-size:28px 28px;
+
+    z-index:-3;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(221,164,116,.18),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 90% 65%,
+            rgba(139,158,122,.16),
+            transparent 28%
+        );
+
+    z-index:-4;
+
+}
+
+
+/* =================================
+   FLOATING DECORATIONS
+================================= */
+
+.decor{
+
+    position:fixed;
+
+    z-index:-1;
+
+    color:#b8845c;
+
+    font-size:23px;
+
+    opacity:.45;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.d1{
+
+    top:9%;
+    left:7%;
+
+}
+
+.d2{
+
+    top:30%;
+    right:8%;
+
+    animation-delay:1s;
+
+}
+
+.d3{
+
+    bottom:25%;
+    left:10%;
+
+    animation-delay:2s;
+
+}
+
+.d4{
+
+    bottom:11%;
+    right:13%;
+
+    animation-delay:1.5s;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-9px) rotate(8deg);
+    }
+
+}
+
+
+/* =================================
+   MUSIC BUTTON
+================================= */
+
+.music-button{
+
+    position:fixed;
+
+    top:16px;
+    right:16px;
+
+    z-index:100;
+
+    border:none;
+
+    background:#fffaf4;
+
+    color:#705541;
+
+    padding:10px 16px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 25px rgba(75,55,40,.12);
+
+    display:none;
+
+    transition:.25s;
+
+}
+
+.music-button:hover{
+
+    transform:translateY(-2px);
+
+    background:#ead7c1;
+
+}
+
+
+/* =================================
+   OPENING SCREEN
+================================= */
+
+.opening{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+}
+
+.opening-card{
+
+    width:min(650px,100%);
+
+    background:#fffaf4;
+
+    border:2px solid #ead8c5;
+
+    border-radius:34px;
+
+    padding:58px 30px;
+
+    text-align:center;
+
+    position:relative;
+
+    box-shadow:
+        0 25px 70px rgba(83,61,43,.13);
+
+}
+
+.opening-card::before{
+
+    content:"✦";
+
+    position:absolute;
+
+    top:22px;
+    left:26px;
+
+    color:#c98255;
+
+    font-size:24px;
+
+}
+
+.opening-card::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    bottom:22px;
+    right:26px;
+
+    color:#8d9b79;
+
+    font-size:24px;
+
+}
+
+.opening-small{
+
+    font-family:"JetBrains Mono",monospace;
+
+    color:#a18c7b;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    margin-bottom:22px;
+
+}
+
+.opening-icon{
+
+    font-size:70px;
+
+    margin-bottom:17px;
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+
+}
+
+.opening-card h1{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#5d4637;
+
+    font-size:clamp(43px,10vw,70px);
+
+    line-height:1;
+
+}
+
+.opening-card h2{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#bf7950;
+
+    font-size:clamp(27px,7vw,44px);
+
+    margin-top:8px;
+
+}
+
+.opening-card p{
+
+    max-width:500px;
+
+    margin:22px auto 0;
+
+    color:#81736a;
+
+    line-height:1.8;
+
+}
+
+.open-button{
+
+    margin-top:30px;
+
+    border:none;
+
+    background:#bd7950;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-family:"Fredoka",sans-serif;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 9px 25px rgba(150,92,59,.20);
+
+    transition:.25s;
+
+}
+
+.open-button:hover{
+
+    transform:translateY(-3px) scale(1.02);
+
+    background:#a96843;
+
+}
+
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
+#birthdayContent{
+
+    display:none;
+
+}
+
+
+/* =================================
+   EMOTIONAL WARM-UP
+================================= */
+
+.warmup{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:90px 22px;
+
+}
+
+.warmup-card{
+
+    width:min(760px,100%);
+
+    background:#fffaf4;
+
+    border:2px solid #ead8c5;
+
+    border-radius:30px;
+
+    padding:55px 30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 60px rgba(83,61,43,.10);
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.warmup-label{
+
+    font-family:"JetBrains Mono",monospace;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    color:#a18b78;
+
+    margin-bottom:20px;
+
+}
+
+.warmup-heart{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+
+}
+
+.warmup-card h2{
+
+    font-family:"Fredoka",sans-serif;
+
+    font-size:clamp(30px,7vw,46px);
+
+    color:#5d4739;
+
+    margin-bottom:28px;
+
+}
+
+.warmup-card p{
+
+    max-width:610px;
+
+    margin:auto;
+
+    color:#756960;
+
+    line-height:2;
+
+    font-size:15px;
+
+}
+
+.continue-button{
+
+    margin-top:32px;
+
+    border:none;
+
+    background:#8d9c78;
+
+    color:white;
+
+    padding:13px 26px;
+
+    border-radius:50px;
+
+    font-family:"Fredoka",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.continue-button:hover{
+
+    transform:translateY(-2px);
+
+    background:#7d8d69;
+
+}
+
+
+/* =================================
+   BIRTHDAY HERO
+================================= */
+
+.hero{
+
+    min-height:75vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:90px 25px 60px;
+
+}
+
+.hero-inner{
+
+    max-width:800px;
+
+}
+
+.hero-label{
+
+    display:inline-block;
+
+    background:#fffaf4;
+
+    color:#9b765d;
+
+    border:1px solid #ead8c5;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-family:"JetBrains Mono",monospace;
+
+    font-size:10px;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#5d4738;
+
+    font-size:clamp(48px,12vw,90px);
+
+    line-height:.95;
+
+}
+
+.hero h1 span{
+
+    color:#bd7950;
+
+}
+
+.hero p{
+
+    margin-top:22px;
+
+    color:#786c64;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+
+/* =================================
+   VIDEOS
+================================= */
+
+.videos{
+
+    width:min(950px,92%);
+
+    margin:auto;
+
+    padding:30px 0 80px;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.section-mini{
+
+    color:#9b806a;
+
+    font-family:"JetBrains Mono",monospace;
+
+    font-size:10px;
+
+    margin-bottom:12px;
+
+}
+
+.section-heading h2{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#5c4738;
+
+    font-size:40px;
+
+}
+
+.section-heading p{
+
+    color:#82766e;
+
+    margin-top:10px;
+
+}
+
+
+/* VIDEO CARD */
+
+.video-card{
+
+    background:#fffaf4;
+
+    border:2px solid #ead8c5;
+
+    border-radius:26px;
+
+    padding:18px;
+
+    margin-bottom:35px;
+
+    box-shadow:
+        0 15px 45px rgba(83,61,43,.10);
+
+    transition:.25s;
+
+}
+
+.video-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 50px rgba(83,61,43,.15);
+
+}
+
+.video-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin:4px 5px 15px;
+
+}
+
+.video-number{
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    background:#ead7c1;
+
+    color:#76543f;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:"Fredoka",sans-serif;
+
+    font-size:13px;
+
+}
+
+.video-name{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#5b493e;
+
+    font-size:20px;
+
+}
+
+.video-wrapper{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:#302a26;
+
+}
+
+video{
+
+    width:100%;
+
+    display:block;
+
+    background:#302a26;
+
+    max-height:650px;
+
+}
+
+.video-caption{
+
+    color:#8d8178;
+
+    text-align:center;
+
+    font-size:12px;
+
+    padding:13px 5px 2px;
+
+}
+
+
+/* =================================
+   MESSAGE
+================================= */
+
+.message-section{
+
+    width:min(800px,90%);
+
+    margin:40px auto 100px;
+
+}
+
+.message-card{
+
+    background:#fffaf4;
+
+    border:2px solid #ead8c5;
+
+    border-radius:30px;
+
+    padding:48px 32px;
+
+    box-shadow:
+        0 15px 45px rgba(83,61,43,.09);
+
+    text-align:center;
+
+}
+
+.message-icon{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.message-label{
+
+    font-family:"JetBrains Mono",monospace;
+
+    font-size:10px;
+
+    color:#a18b78;
+
+    margin-bottom:16px;
+
+}
+
+.message-card h2{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#5c4739;
+
+    font-size:35px;
+
+    margin-bottom:25px;
+
+}
+
+.message-card p{
+
+    color:#746961;
+
+    line-height:1.95;
+
+    font-size:15px;
+
+}
+
+
+/* =================================
+   FINAL
+================================= */
+
+.final{
+
+    min-height:75vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:60px 25px;
+
+}
+
+.final-card{
+
+    max-width:700px;
+
+}
+
+.final-icon{
+
+    font-size:65px;
+
+    margin-bottom:18px;
+
+}
+
+.final-card h2{
+
+    font-family:"Fredoka",sans-serif;
+
+    color:#5c4738;
+
+    font-size:clamp(36px,8vw,62px);
+
+    line-height:1;
+
+    margin-bottom:20px;
+
+}
+
+.final-card h2 span{
+
+    color:#bd7950;
+
+}
+
+.final-card p{
+
+    color:#7c7068;
+
+    line-height:1.9;
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:600px){
+
+    .opening-card{
+
+        padding:48px 22px;
+
+    }
+
+    .warmup-card{
+
+        padding:45px 22px;
+
+    }
+
+    .hero{
+
+        min-height:65vh;
+
+    }
+
+    .section-heading h2{
+
+        font-size:34px;
+
+    }
+
+    .message-card{
+
+        padding:42px 22px;
+
+    }
+
+}
+
+
+/* =================================
+   FADE TRANSITION
+================================= */
+
+.fade-out{
+
+    animation:fadeOut .7s forwards;
+
+}
+
+@keyframes fadeOut{
+
+    to{
+
+        opacity:0;
+
+        transform:scale(.98);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     DECORATIONS
+================================= -->
+
+<div class="decor d1">✦</div>
+<div class="decor d2">♡</div>
+<div class="decor d3">✧</div>
+<div class="decor d4">★</div>
+
+
+
+<!-- =================================
+     BACKGROUND MUSIC
+================================= -->
+
+<audio
+    id="birthdayMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="Birthday.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<!-- =================================
+     MUSIC BUTTON
+================================= -->
+
+<button
+    class="music-button"
+    id="musicButton"
+>
+
+    🎵 Music ON
+
+</button>
+
+
+
+<!-- =================================
+     OPENING
+================================= -->
+
+<section
+    class="opening"
+    id="opening"
+>
+
+    <div class="opening-card">
+
+        <div class="opening-small">
+            A LITTLE SOMETHING MADE FOR YOU
+        </div>
+
+        <div class="opening-icon">
+            🎂
+        </div>
+
+        <h1>
+            Happy
+        </h1>
+
+        <h2>
+            17th Birthday!
+        </h2>
+
+        <p>
+
+            I made this little corner of the internet
+            especially for you.
+
+            <br>
+
+            Before the videos though...
+            there's something I want you to read first. 🤍
+
+        </p>
+
+        <button
+            class="open-button"
+            onclick="openBirthday()"
+        >
+
+            ♡ Tap to Open ♡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     MAIN
+================================= -->
+
+<main id="birthdayContent">
+
+
+
+<!-- =================================
+     FAMILY WARM-UP
+================================= -->
+
+<section class="warmup">
+
+    <div class="warmup-card">
+
+        <div class="warmup-label">
+            BEFORE THE BIRTHDAY MESSAGES
+        </div>
+
+        <div class="warmup-heart">
+            🤍
+        </div>
+
+        <h2>
+            Before anything else...
+        </h2>
+
+        <p>
+
+            I know that not everything in life
+            always turns out the way we imagined it.
+
+            <br><br>
+
+            Sometimes, family situations can be complicated.
+            Sometimes, there are things we wish could have
+            been different, and there are moments when
+            you just have to accept things that you never
+            really asked for.
+
+            <br><br>
+
+            But I hope you always remember this:
+
+            <br><br>
+
+            <strong>
+                None of those circumstances make you
+                any less deserving of love, happiness,
+                peace, and good things in life.
+            </strong>
+
+            <br><br>
+
+            You deserve people who genuinely care about you.
+            You deserve moments that feel safe and happy.
+            You deserve to create a future filled with
+            things that make you proud.
+
+            <br><br>
+
+            And whatever life brings,
+            I hope you never forget how valuable you are
+            to the people who truly care about you.
+
+            <br><br>
+
+            I hope this birthday reminds you that
+            you are loved, appreciated, and worth celebrating.
+
+        </p>
+
+        <button
+            class="continue-button"
+            onclick="showBirthday()"
+        >
+
+            Okay... continue 🤍
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-label">
+            ✦ TODAY IS YOUR DAY ✦
+        </div>
+
+        <h1>
+
+            HAPPY<br>
+
+            <span>BIRTHDAY</span>
+
+        </h1>
+
+        <p>
+
+            Happy 17th birthday, Angelo. 🎂
+
+            <br>
+
+            Now... here are the little messages
+            I made for you.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     VIDEOS
+================================= -->
+
+<section
+    class="videos"
+    id="videos"
+>
+
+    <div class="section-heading">
+
+        <div class="section-mini">
+            LITTLE VIDEO MESSAGES
+        </div>
+
+        <h2>
+            Made For You 🎥
+        </h2>
+
+        <p>
+            Take your time watching them.
+        </p>
+
+    </div>
+
+
+
+    <!-- VIDEO 1 -->
+
+    <div class="video-card">
+
+        <div class="video-top">
+
+            <div class="video-number">
+                01
+            </div>
+
+            <div class="video-name">
+                Birthday Message
+            </div>
+
+        </div>
+
+        <div class="video-wrapper">
+
+            <video
+                controls
+                playsinline
+                preload="metadata"
+            >
+
+                <source
+                    src="video1.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support video.
+
+            </video>
+
+        </div>
+
+        <div class="video-caption">
+            ♡ a little message for you
+        </div>
+
+    </div>
+
+
+
+    <!-- VIDEO 2 -->
+
+    <div class="video-card">
+
+        <div class="video-top">
+
+            <div class="video-number">
+                02
+            </div>
+
+            <div class="video-name">
+                Another Little Message
+            </div>
+
+        </div>
+
+        <div class="video-wrapper">
+
+            <video
+                controls
+                playsinline
+                preload="metadata"
+            >
+
+                <source
+                    src="video2.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support video.
+
+            </video>
+
+        </div>
+
+        <div class="video-caption">
+            ♡ there's more
+        </div>
+
+    </div>
+
+
+
+    <!-- VIDEO 3 -->
+
+    <div class="video-card">
+
+        <div class="video-top">
+
+            <div class="video-number">
+                03
+            </div>
+
+            <div class="video-name">
+                One Last Message
+            </div>
+
+        </div>
+
+        <div class="video-wrapper">
+
+            <video
+                controls
+                playsinline
+                preload="metadata"
+            >
+
+                <source
+                    src="video3.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support video.
+
+            </video>
+
+        </div>
+
+        <div class="video-caption">
+            ♡ save this one
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     PERSONAL MESSAGE
+================================= -->
+
+<section class="message-section">
+
+    <div class="message-card">
+
+        <div class="message-icon">
+            💌
+        </div>
+
+        <div class="message-label">
+            ONE LAST THING
+        </div>
+
+        <h2>
+            For You, Angelo
+        </h2>
+
+        <p>
+
+            Happy birthday to someone who has become
+            such a special and important person in my life. 🤍
+
+            <br><br>
+
+            For almost 10 months, you've been patiently
+            staying by my side and trying to understand me,
+            even during the moments when I'm difficult
+            to understand.
+
+            <br><br>
+
+            I know I can overthink, get emotional,
+            or sometimes make things more complicated
+            than they need to be, but I really appreciate
+            the patience and understanding you've shown me.
+
+            <br><br>
+
+            I hope this new year of your life brings you
+            more reasons to smile, more peaceful days,
+            and more moments that make you genuinely happy.
+
+            <br><br>
+
+            I also pray that God continues to guide you,
+            protect you, and bless you in everything you do.
+
+            <br><br>
+
+            I hope you achieve the things you dream about
+            and become the person you want to be.
+
+            <br><br>
+
+            Thank you for being someone I can talk to,
+            someone who listens, and someone whose presence
+            means more than you probably realize.
+
+            <br><br>
+
+            I love you, my Angelo. 🤍
+
+            <br><br>
+
+            Happy birthday again. 🎂
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FINAL
+================================= -->
+
+<section class="final">
+
+    <div class="final-card">
+
+        <div class="final-icon">
+            🎂
+        </div>
+
+        <h2>
+
+            Happy 17th,
+            <span>Angelo!</span>
+
+        </h2>
+
+        <p>
+
+            I hope today reminds you
+            of how many good things are still waiting for you.
+
+            <br><br>
+
+            Keep going.
+            Keep dreaming.
+            Keep being you.
+
+            <br><br>
+
+            You deserve a beautiful year ahead. 🤍
+
+            <br><br>
+
+            ✦ made with love ✦
+
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+/* =================================
+   MUSIC
+================================= */
+
+const music =
+document.getElementById("birthdayMusic");
+
+const musicButton =
+document.getElementById("musicButton");
+
+let musicPlaying = false;
+
+
+
+/* =================================
+   OPEN    BIRTHDAY
+================================= */
+
+function openBirthday(){
+
+    /* Start music after the user's tap */
+    music.volume = 0.60;
+
+    music.play()
+    .then(function(){
+
+        musicPlaying = true;
+
+        musicButton.style.display = "block";
+
+        musicButton.textContent = "🎵 Music ON";
+
+    })
+    .catch(function(){
+
+        musicButton.style.display = "block";
+
+        musicButton.textContent = "🎵 Tap for Music";
+
+    });
+
+
+    /* Hide opening screen */
+    const opening =
+        document.getElementById("opening");
+
+    opening.classList.add("fade-out");
+
+
+    setTimeout(function(){
+
+        opening.style.display = "none";
+
+        document.getElementById(
+            "birthdayContent"
+        ).style.display = "block";
+
+        window.scrollTo(0, 0);
+
+    }, 700);
+
+}
+
+
+
+/* =================================
+   CONTINUE FROM FAMILY MESSAGE
+================================= */
+
+function showBirthday(){
+
+    const hero =
+        document.querySelector(".hero");
+
+    hero.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* =================================
+   MUSIC BUTTON
+================================= */
+
+musicButton.addEventListener(
+    "click",
+    function(){
+
+        if(musicPlaying){
+
+            music.pause();
+
+            musicPlaying = false;
+
+            musicButton.textContent =
+                "🎵 Music OFF";
+
+        }
+
+        else{
+
+            music.volume = 0.60;
+
+            music.play()
+            .then(function(){
+
+                musicPlaying = true;
+
+                musicButton.textContent =
+                    "🎵 Music ON";
+
+            });
+
+        }
+
+    }
+);
+
+
+
+/* =================================
+   VIDEO AUDIO CONTROL
+================================= */
+
+const videos =
+    document.querySelectorAll("video");
+
+
+videos.forEach(function(video){
+
+    video.addEventListener(
+        "play",
+        function(){
+
+            /*
+             * Lower background music
+             * while video is playing.
+             */
+
+            if(musicPlaying){
+
+                music.volume = 0.10;
+
+            }
+
+        }
+    );
+
+
+    video.addEventListener(
+        "pause",
+        function(){
+
+            if(musicPlaying){
+
+                music.volume = 0.60;
+
+            }
+
+        }
+    );
+
+
+    video.addEventListener(
+        "ended",
+        function(){
+
+            if(musicPlaying){
+
+                music.volume = 0.60;
+
+            }
+
+        }
+    );
+
+});
+
+
+
+/* =================================
+   ONLY ONE VIDEO PLAYS AT A TIME
+================================= */
+
+videos.forEach(function(currentVideo){
+
+    currentVideo.addEventListener(
+        "play",
+        function(){
+
+            videos.forEach(function(otherVideo){
+
+                if(otherVideo !== currentVideo){
+
+                    otherVideo.pause();
+
+                }
+
+            });
+
+        }
+    );
+
+});
+
+
+
+/* =================================
+   AUTOPLAY ATTEMPT
+================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        music.volume = 0.60;
+
+        /*
+         * This tries automatic playback.
+         *
+         * If the browser allows autoplay,
+         * music starts immediately.
+         *
+         * If the browser blocks it,
+         * the "Tap to Open" button will
+         * start the music.
+         */
+
+        music.play()
+        .then(function(){
+
+            musicPlaying = true;
+
+            musicButton.style.display = "block";
+
+            musicButton.textContent =
+                "🎵 Music ON";
+
+        })
+        .catch(function(){
+
+            /*
+             * Normal on mobile browsers.
+             * User tap will start the music.
+             */
+
+        });
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
