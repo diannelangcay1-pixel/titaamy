@@ -13,7 +13,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-
 <style>
 
 /* =================================
@@ -667,7 +666,9 @@ body::after{
 }
 
 
-/* VIDEO CARD */
+/* =================================
+   VIDEO CARD
+================================= */
 
 .video-card{
 
@@ -742,6 +743,11 @@ body::after{
 
 }
 
+
+/* =================================
+   PORTRAIT VIDEO
+================================= */
+
 .video-wrapper{
 
     overflow:hidden;
@@ -750,19 +756,39 @@ body::after{
 
     background:#302a26;
 
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
 }
+
+
+/* 9:16 PORTRAIT VIDEO */
 
 video{
 
     width:100%;
 
+    max-width:430px;
+
+    aspect-ratio:9 / 16;
+
+    height:auto;
+
     display:block;
+
+    margin:auto;
+
+    object-fit:contain;
 
     background:#302a26;
 
-    max-height:650px;
+    border-radius:14px;
 
 }
+
 
 .video-caption{
 
@@ -945,6 +971,12 @@ video{
     .message-card{
 
         padding:42px 22px;
+
+    }
+
+    video{
+
+        max-width:100%;
 
     }
 
@@ -1460,25 +1492,26 @@ video{
         </h2>
 
         <p>
+<p>
 
-            I hope today reminds you
-            of how many good things are still waiting for you.
+    I hope today reminds you
+    of how many good things are still waiting for you.
 
-            <br><br>
+    <br><br>
 
-            Keep going.
-            Keep dreaming.
-            Keep being you.
+    Keep going.
+    Keep dreaming.
+    Keep being you.
 
-            <br><br>
+    <br><br>
 
-            You deserve a beautiful year ahead. 🤍
+    You deserve a beautiful year ahead. 🤍
 
-            <br><br>
+    <br><br>
 
-            ✦ made with love ✦
+    we love you looo
 
-        </p>
+</p>
 
     </div>
 
@@ -1504,245 +1537,191 @@ document.getElementById("musicButton");
 let musicPlaying = false;
 
 
-
 /* =================================
-   OPEN    BIRTHDAY
+   OPEN BIRTHDAY
 ================================= */
 
 function openBirthday(){
 
-    /* Start music after the user's tap */
-    music.volume = 0.60;
-
-    music.play()
-    .then(function(){
-
-        musicPlaying = true;
-
-        musicButton.style.display = "block";
-
-        musicButton.textContent = "🎵 Music ON";
-
-    })
-    .catch(function(){
-
-        musicButton.style.display = "block";
-
-        musicButton.textContent = "🎵 Tap for Music";
-
-    });
-
-
-    /* Hide opening screen */
     const opening =
-        document.getElementById("opening");
+    document.getElementById("opening");
+
+    const content =
+    document.getElementById("birthdayContent");
+
 
     opening.classList.add("fade-out");
 
 
     setTimeout(function(){
 
-        opening.style.display = "none";
+        opening.style.display="none";
 
-        document.getElementById(
-            "birthdayContent"
-        ).style.display = "block";
+        content.style.display="block";
 
-        window.scrollTo(0, 0);
+        document.body.style.overflowX="hidden";
 
-    }, 700);
+
+        /* START MUSIC */
+
+        music.volume = 0.6;
+
+        const playPromise = music.play();
+
+        if(playPromise !== undefined){
+
+            playPromise
+            .then(function(){
+
+                musicPlaying=true;
+
+                musicButton.style.display="block";
+
+                musicButton.textContent="🎵 Music ON";
+
+            })
+            .catch(function(){
+
+                musicPlaying=false;
+
+                musicButton.style.display="block";
+
+                musicButton.textContent="🎵 Tap for Music";
+
+            });
+
+        }
+
+    },700);
 
 }
 
 
-
 /* =================================
-   CONTINUE FROM FAMILY MESSAGE
+   SHOW BIRTHDAY
 ================================= */
 
 function showBirthday(){
 
-    const hero =
-        document.querySelector(".hero");
+    window.scrollTo({
 
-    hero.scrollIntoView({
-        behavior: "smooth"
+        top:window.innerHeight,
+
+        behavior:"smooth"
+
     });
 
 }
-
 
 
 /* =================================
    MUSIC BUTTON
 ================================= */
 
-musicButton.addEventListener(
-    "click",
-    function(){
+musicButton.addEventListener("click",function(){
 
-        if(musicPlaying){
+    if(musicPlaying){
 
-            music.pause();
+        music.pause();
 
-            musicPlaying = false;
+        musicPlaying=false;
 
-            musicButton.textContent =
-                "🎵 Music OFF";
-
-        }
-
-        else{
-
-            music.volume = 0.60;
-
-            music.play()
-            .then(function(){
-
-                musicPlaying = true;
-
-                musicButton.textContent =
-                    "🎵 Music ON";
-
-            });
-
-        }
+        musicButton.textContent="🎵 Music OFF";
 
     }
-);
 
-
-
-/* =================================
-   VIDEO AUDIO CONTROL
-================================= */
-
-const videos =
-    document.querySelectorAll("video");
-
-
-videos.forEach(function(video){
-
-    video.addEventListener(
-        "play",
-        function(){
-
-            /*
-             * Lower background music
-             * while video is playing.
-             */
-
-            if(musicPlaying){
-
-                music.volume = 0.10;
-
-            }
-
-        }
-    );
-
-
-    video.addEventListener(
-        "pause",
-        function(){
-
-            if(musicPlaying){
-
-                music.volume = 0.60;
-
-            }
-
-        }
-    );
-
-
-    video.addEventListener(
-        "ended",
-        function(){
-
-            if(musicPlaying){
-
-                music.volume = 0.60;
-
-            }
-
-        }
-    );
-
-});
-
-
-
-/* =================================
-   ONLY ONE VIDEO PLAYS AT A TIME
-================================= */
-
-videos.forEach(function(currentVideo){
-
-    currentVideo.addEventListener(
-        "play",
-        function(){
-
-            videos.forEach(function(otherVideo){
-
-                if(otherVideo !== currentVideo){
-
-                    otherVideo.pause();
-
-                }
-
-            });
-
-        }
-    );
-
-});
-
-
-
-/* =================================
-   AUTOPLAY ATTEMPT
-================================= */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        music.volume = 0.60;
-
-        /*
-         * This tries automatic playback.
-         *
-         * If the browser allows autoplay,
-         * music starts immediately.
-         *
-         * If the browser blocks it,
-         * the "Tap to Open" button will
-         * start the music.
-         */
+    else{
 
         music.play()
         .then(function(){
 
-            musicPlaying = true;
+            musicPlaying=true;
 
-            musicButton.style.display = "block";
-
-            musicButton.textContent =
-                "🎵 Music ON";
+            musicButton.textContent="🎵 Music ON";
 
         })
         .catch(function(){
 
-            /*
-             * Normal on mobile browsers.
-             * User tap will start the music.
-             */
+            alert("Please tap the music button again.");
 
         });
 
     }
-);
+
+});
+
+
+/* =================================
+   VIDEO MUSIC CONTROL
+================================= */
+
+const videos =
+document.querySelectorAll("video");
+
+
+videos.forEach(function(video){
+
+    video.addEventListener("play",function(){
+
+        /* Pause other videos */
+
+        videos.forEach(function(otherVideo){
+
+            if(otherVideo !== video){
+
+                otherVideo.pause();
+
+            }
+
+        });
+
+
+        /* Lower background music */
+
+        if(musicPlaying){
+
+            music.volume=0.10;
+
+        }
+
+    });
+
+
+    video.addEventListener("pause",function(){
+
+        if(musicPlaying){
+
+            music.volume=0.60;
+
+        }
+
+    });
+
+
+    video.addEventListener("ended",function(){
+
+        if(musicPlaying){
+
+            music.volume=0.60;
+
+        }
+
+    });
+
+});
+
+
+/* =================================
+   MUSIC ERROR CHECK
+================================= */
+
+music.addEventListener("error",function(){
+
+    console.log(
+        "Birthday.mp3 could not be loaded."
+    );
+
+});
 
 </script>
 
